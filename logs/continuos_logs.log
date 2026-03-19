@@ -1,0 +1,123 @@
+[2026-03-19 13:39:19,288: INFO: main: logging is implemented]
+[2026-03-19 16:11:41,789: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:11:41,793: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:11:41,795: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:11:41,796: INFO: common: created directory at: artifacts]
+[2026-03-19 16:11:41,797: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:11:42,936: INFO: data_ingestion: File is downloaded]
+[2026-03-19 16:11:43,275: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 10, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_1_data_ingestion_pipeline.py", line 16, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_ingestion.py", line 31, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1385, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1452, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2026-03-19 16:19:25,706: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:19:25,712: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:19:25,716: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:19:25,717: INFO: common: created directory at: artifacts]
+[2026-03-19 16:19:25,718: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:19:25,718: INFO: data_ingestion: File already exits]
+[2026-03-19 16:19:25,720: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 10, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_1_data_ingestion_pipeline.py", line 16, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_ingestion.py", line 31, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1385, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1452, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2026-03-19 16:21:05,297: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:21:05,299: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:21:05,300: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:21:05,301: INFO: common: created directory at: artifacts]
+[2026-03-19 16:21:05,302: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:21:06,398: INFO: data_ingestion: File is downloaded]
+[2026-03-19 16:21:06,560: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 10, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_1_data_ingestion_pipeline.py", line 16, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_ingestion.py", line 31, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1385, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1452, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2026-03-19 16:21:44,576: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:21:44,579: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:21:44,580: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:21:44,580: INFO: common: created directory at: artifacts]
+[2026-03-19 16:21:44,581: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:21:44,581: INFO: data_ingestion: File already exits]
+[2026-03-19 16:21:44,582: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 10, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_1_data_ingestion_pipeline.py", line 16, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_ingestion.py", line 31, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1385, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1452, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2026-03-19 16:27:27,556: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:27:27,572: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:27:27,573: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:27:27,574: INFO: common: created directory at: artifacts]
+[2026-03-19 16:27:27,574: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:27:27,575: INFO: data_ingestion: File already exits]
+[2026-03-19 16:27:27,575: ERROR: main: File is not a zip file]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 10, in <module>
+    data_ingestion_pipeline.initiate_data_ingestion()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_1_data_ingestion_pipeline.py", line 16, in initiate_data_ingestion
+    data_ingestion.extract_zip_file()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_ingestion.py", line 31, in extract_zip_file
+    with zipfile.ZipFile(self.config.local_data_file, 'r') as zip_ref:
+         ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1385, in __init__
+    self._RealGetContents()
+    ~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\anaconda3\Lib\zipfile\__init__.py", line 1452, in _RealGetContents
+    raise BadZipFile("File is not a zip file")
+zipfile.BadZipFile: File is not a zip file
+[2026-03-19 16:27:54,641: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 16:27:54,645: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 16:27:54,646: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 16:27:54,647: INFO: common: created directory at: artifacts]
+[2026-03-19 16:27:54,648: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 16:27:59,055: INFO: data_ingestion: File is downloaded]
+[2026-03-19 16:27:59,211: INFO: main: Stage Data Ingestion stage Completed]
