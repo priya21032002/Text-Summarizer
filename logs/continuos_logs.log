@@ -162,3 +162,99 @@ NameError: name 'DataValidationTrainingPipeline' is not defined. Did you mean: '
 [2026-03-19 21:17:56,261: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
 
 x==========x]
+[2026-03-19 21:29:24,370: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 21:29:24,376: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 21:29:24,380: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 21:29:24,381: INFO: common: created directory at: artifacts]
+[2026-03-19 21:29:24,382: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 21:29:24,383: INFO: data_ingestion: File already exits]
+[2026-03-19 21:29:24,519: INFO: main: Stage Data Ingestion stage Completed]
+[2026-03-19 21:29:24,519: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2026-03-19 21:29:24,521: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 21:29:24,522: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 21:29:24,523: INFO: common: created directory at: artifacts]
+[2026-03-19 21:29:24,524: INFO: common: created directory at: artifacts/data_validation]
+[2026-03-19 21:29:24,528: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2026-03-19 21:29:24,528: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-03-19 21:29:24,530: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 21:29:24,531: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 21:29:24,533: INFO: common: created directory at: artifacts]
+[2026-03-19 21:29:24,534: INFO: common: created directory at: artifacts/data_transformation]
+[2026-03-19 21:29:25,625: INFO: _client: HTTP Request: HEAD https://huggingface.co/google/pegasus-cnn_dailymail/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"]
+[2026-03-19 21:29:25,627: WARNING: _http: Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.]
+[2026-03-19 21:29:25,819: INFO: _client: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/pegasus-cnn_dailymail/40d588fdab0cc077b80d950b300bf66ad3c75b92/config.json "HTTP/1.1 200 OK"]
+[2026-03-19 21:29:26,094: INFO: _client: HTTP Request: HEAD https://huggingface.co/google/pegasus-cnn_dailymail/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"]
+[2026-03-19 21:29:26,202: INFO: _client: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/pegasus-cnn_dailymail/40d588fdab0cc077b80d950b300bf66ad3c75b92/tokenizer_config.json "HTTP/1.1 200 OK"]
+[2026-03-19 21:29:26,483: INFO: _client: HTTP Request: GET https://huggingface.co/api/models/google/pegasus-cnn_dailymail/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"]
+[2026-03-19 21:29:26,899: INFO: _client: HTTP Request: GET https://huggingface.co/api/models/google/pegasus-cnn_dailymail/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"]
+[2026-03-19 21:29:27,865: ERROR: main: PegasusTokenizer has no attribute as_target_tokenizer]
+Traceback (most recent call last):
+  File "C:\Users\Priya\Downloads\Text-Summarizer\main.py", line 33, in <module>
+    data_transformation.main()
+    ~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\pipeline\stage_3_data_transformation.py", line 14, in main
+    data_transformation.convert()
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_transformation.py", line 31, in convert
+    dataset_samsum_pt = dataset_samsum.map(self.convert_examples_to_features, batched = True)
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\dataset_dict.py", line 969, in map
+    dataset_dict[split] = dataset.map(
+                          ~~~~~~~~~~~^
+        function=function,
+        ^^^^^^^^^^^^^^^^^^
+    ...<17 lines>...
+        on_mixed_types=on_mixed_types,
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\arrow_dataset.py", line 574, in wrapper
+    out: Union["Dataset", "DatasetDict"] = func(self, *args, **kwargs)
+                                           ~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\arrow_dataset.py", line 3632, in map
+    for rank, done, content in Dataset._map_single(**unprocessed_kwargs):
+                               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\arrow_dataset.py", line 3997, in _map_single
+    for i, batch in iter_outputs(shard_iterable):
+                    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\arrow_dataset.py", line 3950, in iter_outputs
+    yield i, apply_function(example, i, offset=offset)
+             ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\datasets\arrow_dataset.py", line 3871, in apply_function
+    processed_inputs = function(*fn_args, *additional_args, **fn_kwargs)
+  File "C:\Users\Priya\Downloads\Text-Summarizer\src\textSummarizer\components\data_transformation.py", line 19, in convert_examples_to_features
+    with self.tokenizer.as_target_tokenizer():
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Priya\Downloads\Text-Summarizer\venv\Lib\site-packages\transformers\tokenization_utils_base.py", line 1293, in __getattr__
+    raise AttributeError(f"{self.__class__.__name__} has no attribute {key}")
+AttributeError: PegasusTokenizer has no attribute as_target_tokenizer
+[2026-03-19 23:38:26,121: INFO: main: stage Data Ingestion stage initiated]
+[2026-03-19 23:38:26,125: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 23:38:26,129: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 23:38:26,130: INFO: common: created directory at: artifacts]
+[2026-03-19 23:38:26,131: INFO: common: created directory at: artifacts/data_ingestion]
+[2026-03-19 23:38:26,132: INFO: data_ingestion: File already exits]
+[2026-03-19 23:38:26,269: INFO: main: Stage Data Ingestion stage Completed]
+[2026-03-19 23:38:26,269: INFO: main: >>>>>> stage Data Validation stage started <<<<<<]
+[2026-03-19 23:38:26,272: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 23:38:26,273: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 23:38:26,274: INFO: common: created directory at: artifacts]
+[2026-03-19 23:38:26,274: INFO: common: created directory at: artifacts/data_validation]
+[2026-03-19 23:38:26,279: INFO: main: >>>>>> stage Data Validation stage completed <<<<<<
+
+x==========x]
+[2026-03-19 23:38:26,279: INFO: main: >>>>>> stage Data Transformation stage started <<<<<<]
+[2026-03-19 23:38:26,282: INFO: common: yaml file: config\config.yaml loaded successfully]
+[2026-03-19 23:38:26,284: INFO: common: yaml file: params.yaml loaded successfully]
+[2026-03-19 23:38:26,285: INFO: common: created directory at: artifacts]
+[2026-03-19 23:38:26,286: INFO: common: created directory at: artifacts/data_transformation]
+[2026-03-19 23:38:27,354: INFO: _client: HTTP Request: HEAD https://huggingface.co/google/pegasus-cnn_dailymail/resolve/main/config.json "HTTP/1.1 307 Temporary Redirect"]
+[2026-03-19 23:38:27,476: INFO: _client: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/pegasus-cnn_dailymail/40d588fdab0cc077b80d950b300bf66ad3c75b92/config.json "HTTP/1.1 200 OK"]
+[2026-03-19 23:38:27,827: INFO: _client: HTTP Request: HEAD https://huggingface.co/google/pegasus-cnn_dailymail/resolve/main/tokenizer_config.json "HTTP/1.1 307 Temporary Redirect"]
+[2026-03-19 23:38:27,872: INFO: _client: HTTP Request: HEAD https://huggingface.co/api/resolve-cache/models/google/pegasus-cnn_dailymail/40d588fdab0cc077b80d950b300bf66ad3c75b92/tokenizer_config.json "HTTP/1.1 200 OK"]
+[2026-03-19 23:38:28,307: INFO: _client: HTTP Request: GET https://huggingface.co/api/models/google/pegasus-cnn_dailymail/tree/main/additional_chat_templates?recursive=false&expand=false "HTTP/1.1 404 Not Found"]
+[2026-03-19 23:38:28,627: INFO: _client: HTTP Request: GET https://huggingface.co/api/models/google/pegasus-cnn_dailymail/tree/main?recursive=true&expand=false "HTTP/1.1 200 OK"]
+[2026-03-19 23:38:35,899: INFO: main: >>>>>> stage Data Transformation stage completed <<<<<<
+
+x==========x]
